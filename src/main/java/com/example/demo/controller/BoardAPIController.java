@@ -7,31 +7,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.List;
 
-@Controller
-public class BoardController {
+@RequestMapping("/api/boards")
+@RestController
+public class BoardAPIController {
     BoardService boardService;
 
     @Autowired
-    public BoardController(BoardService  boardService) {
+    public BoardAPIController(BoardService  boardService) {
         this.boardService = boardService;
     }
 
-    @RequestMapping("/")
-    public String Index(Model model) {
+    @GetMapping("/")
+    public ArrayList<BoardDTO> Index() {
         ArrayList<BoardDTO> boards = boardService.getBoard();
         System.out.println(boards);
 
-        model.addAttribute("boards", boards);
-
-        return "index";
-    }
-
-    @GetMapping("/boards")
-    public String Boards() {
-        return "boards";
+        return boards;
     }
 }

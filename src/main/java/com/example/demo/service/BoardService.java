@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.BoardDTO;
+
+import java.util.ArrayList;
+
 public interface BoardService {
-    public String getBoard();
+    public ArrayList<BoardDTO> getBoard();
 }

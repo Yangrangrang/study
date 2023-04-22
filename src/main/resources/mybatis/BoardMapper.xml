@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.mapper.BoardMapper">
-    <select id="getBoardList" resultType="String">
-        select "dbTest" from dual
+    <select id="getBoardList" resultType="com.example.demo.dto.BoardDTO">
+        select * from board
     </select>
 </mapper>

@@ -1,0 +1,19 @@
+li {
+    display: flex;
+}
+li div {
+    padding: 10px;
+    border: 1px solid grey;
+    border-right: none;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+li div:last-of-type {
+    border-right: 1px solid grey;
+}
+li:first-of-type div {
+    border-bottom: 2px solid grey;
+}
+li:last-of-type div {
+    border-bottom: 1px solid grey;
+}
